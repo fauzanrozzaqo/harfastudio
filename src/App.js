@@ -1,6 +1,11 @@
 import React, { Component } from "react"
-import logo from "./hstudio.png"
+//import logo from "./hstudio.png"
 import "./App.css"
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import ProTip from './ProTip';
 
 // class LambdaDemo extends Component {
 //   constructor(props) {
@@ -30,19 +35,32 @@ import "./App.css"
 //     )
 //   }
 // }
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Harfa Studio
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Harfa Studio
-          </p>
-        </header>
-      </div>
-    )
+      <Container maxWidth="sm">
+        <Box my={4}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Create React App v4-beta example
+        </Typography>
+          <ProTip />
+          <Copyright />
+        </Box>
+      </Container>
+    );
   }
 }
 
